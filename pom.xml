@@ -10,7 +10,6 @@
    <modules>
       <module>ear</module>
       <module>dependency</module>
-      <module>models</module>
       <module>common</module>
       <module>modules</module>
    </modules>
