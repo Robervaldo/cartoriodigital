@@ -7,10 +7,10 @@
    <name>Common Parent</name>
 
    <parent>
-      <artifactId>dependency</artifactId>
+      <artifactId>dependencies</artifactId>
       <groupId>br.com.cartoriodigital</groupId>
       <version>1.0.0</version>
-      <relativePath>../dependency/pom.xml</relativePath>
+      <relativePath>../dependencies/pom.xml</relativePath>
    </parent>
 
    <modules>

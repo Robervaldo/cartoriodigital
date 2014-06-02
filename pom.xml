@@ -9,7 +9,8 @@
 
    <modules>
       <module>ear</module>
-      <module>dependency</module>
+      <module>dependencies</module>
+      <module>support</module>
       <module>common</module>
       <module>security</module>
       <module>modules</module>
