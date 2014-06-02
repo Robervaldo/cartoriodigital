@@ -1,18 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
    <modelVersion>4.0.0</modelVersion>
-   <groupId>br.com.cartoriodigital</groupId>
-   <version>1.0.0</version>
-   <artifactId>project</artifactId>
+   <groupId>br.com.cartoriodigital.security</groupId>
+   <artifactId>security-parent</artifactId>
    <packaging>pom</packaging>
-   <name>Project</name>
+   <name>Security Parent</name>
+
+   <parent>
+      <artifactId>dependency</artifactId>
+      <groupId>br.com.cartoriodigital</groupId>
+      <version>1.0.0</version>
+      <relativePath>../dependency/pom.xml</relativePath>
+   </parent>
 
    <modules>
-      <module>ear</module>
-      <module>dependency</module>
-      <module>common</module>
-      <module>security</module>
-      <module>modules</module>
+      <module>backend</module>
+      <module>frontend</module>
+      <module>model</module>
    </modules>
 
    <build>

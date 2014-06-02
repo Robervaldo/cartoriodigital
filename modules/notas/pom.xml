@@ -4,7 +4,7 @@
    <groupId>br.com.cartoriodigital.modules.notas</groupId>
    <artifactId>notas-parent</artifactId>
    <packaging>pom</packaging>
-   <name>notas</name>
+   <name>Notas Parent</name>
 
    <parent>
       <artifactId>modules-parent</artifactId>

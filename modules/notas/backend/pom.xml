@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<artifactId>notas-backend</artifactId>
-	<name>Notas - Backend</name>
+	<name>Notas Backend</name>
 	<packaging>ejb</packaging>
 
 	<parent>

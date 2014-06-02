@@ -5,7 +5,7 @@
 
 	<artifactId>notas-frontend</artifactId>
 	<packaging>war</packaging>
-	<name>Notas - Frontend</name>
+	<name>Notas Frontend</name>
 
 	<parent>
 		<artifactId>notas-parent</artifactId>

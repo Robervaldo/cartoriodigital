@@ -4,7 +4,7 @@
    <groupId>br.com.cartoriodigital.modules</groupId>
    <artifactId>modules-parent</artifactId>
    <packaging>pom</packaging>
-   <name>modules</name>
+   <name>Modules Parent</name>
 
    <parent>
       <artifactId>dependency</artifactId>
