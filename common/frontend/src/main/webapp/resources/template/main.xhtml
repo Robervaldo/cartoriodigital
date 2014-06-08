@@ -1,0 +1,64 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+
+	<meta http-equiv="X-UA-Compatible" content="IE=8; IE=9" />	
+
+<h:head>		
+	<title><h:outputText value="Cartório Digital" /></title>
+	<meta http-equiv="Content-Type" content="application/xhtml; charset=utf-8" />
+	
+	<h:outputStylesheet library="css" name="font-awesome.min.css" />
+	<h:outputStylesheet library="css" name="bootstrap.min.css" />
+	<h:outputStylesheet library="css" name="App.css" />
+	<h:outputStylesheet library="css" name="custom.css" />
+</h:head>
+
+<body>
+	<f:view contentType="text/html">
+		<div id="wrapper">
+
+			<div id="todo">
+				<div id="topo">
+					<ui:insert name="header">
+						<ui:include src="/resources/template/header.xhtml" />
+					</ui:insert>
+				</div>
+				<div id="conteudo">
+					<ui:insert name="contents">
+					</ui:insert>
+				</div>
+			</div>
+			
+		</div>
+	
+		<div id="rodape">
+			<footer id="footer">
+				<ul class="nav pull-right">
+					<li>
+						Copyright 2014 - Cartório Digital.
+					</li>
+				</ul>
+			</footer>
+		</div>
+		
+		<a style="display: none;" href="#top" id="back-to-top"><i class="fa fa-chevron-up"></i></a>
+	</f:view>
+	
+	<h:outputScript library="js" name="libs/jquery-1.11.0.min.js" />
+	<h:outputScript library="js" name="libs/jquery-ui-1.9.2.custom.min.js" />
+	<h:outputScript library="js" name="libs/bootstrap.min.js" />
+	<h:outputScript library="js" name="App.js" />
+	<h:outputScript library="js" name="angular.min.js" />
+	<h:outputScript library="js" name="angular-route.min.js" />
+	<h:outputScript library="js" name="angular-cookies.min.js" />
+	<h:outputScript library="js" name="angular-loader.min.js" />
+	<h:outputScript library="js" name="angular-resource.min.js" />
+	<h:outputScript library="js" name="custom.js" />
+	
+</body>
+</html>
