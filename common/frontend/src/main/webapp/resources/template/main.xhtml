@@ -16,6 +16,17 @@
 	<h:outputStylesheet library="css" name="bootstrap.min.css" />
 	<h:outputStylesheet library="css" name="App.css" />
 	<h:outputStylesheet library="css" name="custom.css" />
+	
+	<h:outputScript library="js" name="libs/jquery-1.11.0.min.js" />
+	<h:outputScript library="js" name="libs/jquery-ui-1.9.2.custom.min.js" />
+	<h:outputScript library="js" name="libs/bootstrap.min.js" />
+	<h:outputScript library="js" name="App.js" />
+	<h:outputScript library="js" name="angular.min.js" />
+	<h:outputScript library="js" name="angular-route.min.js" />
+	<h:outputScript library="js" name="angular-cookies.min.js" />
+	<h:outputScript library="js" name="angular-loader.min.js" />
+	<h:outputScript library="js" name="angular-resource.min.js" />
+	<h:outputScript library="js" name="custom.js" />
 </h:head>
 
 <body>
@@ -28,7 +39,7 @@
 						<ui:include src="/resources/template/header.xhtml" />
 					</ui:insert>
 				</div>
-				<div id="conteudo">
+				<div id="conteudo" ng-app="myApp">
 					<ui:insert name="contents">
 					</ui:insert>
 				</div>
@@ -48,17 +59,6 @@
 		
 		<a style="display: none;" href="#top" id="back-to-top"><i class="fa fa-chevron-up"></i></a>
 	</f:view>
-	
-	<h:outputScript library="js" name="libs/jquery-1.11.0.min.js" />
-	<h:outputScript library="js" name="libs/jquery-ui-1.9.2.custom.min.js" />
-	<h:outputScript library="js" name="libs/bootstrap.min.js" />
-	<h:outputScript library="js" name="App.js" />
-	<h:outputScript library="js" name="angular.min.js" />
-	<h:outputScript library="js" name="angular-route.min.js" />
-	<h:outputScript library="js" name="angular-cookies.min.js" />
-	<h:outputScript library="js" name="angular-loader.min.js" />
-	<h:outputScript library="js" name="angular-resource.min.js" />
-	<h:outputScript library="js" name="custom.js" />
-	
+
 </body>
 </html>
