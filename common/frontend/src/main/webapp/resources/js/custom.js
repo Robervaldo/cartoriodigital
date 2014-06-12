@@ -2,30 +2,18 @@
  * Cartorio Digital - 07/06/2014
  */
 
-function HomeCtrl($scope, $http, $window) {
-	$scope.geral = {dataAtual: '07/06/2014'};
-	$scope.geral = {nome: 'digite um nome'};
-}
-
-var myApp = angular.module('myApp', []);
-
-myApp.config(['$routeProvider',
+app.config(['$routeProvider',
   function($routeProvider) {
     $routeProvider.
       when('/Cad', {
-        templateUrl: 'pages/cadastroCliente.html',
-        controller: 'HomeCtrl'
-      }).
-      otherwise({
-    	  redirectTo: '/Cad'
-      });
-  }]);
+        templateUrl: 'resources/pages/cadastroCliente.html',
+        controller: 'BaseController'
+    });
+}]);
 
-myApp.controller('CadCtrl', function($scope) {
-	$scope.geral = {nome: 'digite um nome'};
-     
+app.controller('BaseController', function($scope) {
+    $scope.greeting = 'Welcome!';
+    $scope.geral = {nome: 'Jesus Cristo'};
 });
 
-angular.element(document).ready(function(){
-	angular.bootstrap(document, ['myApp']);
-});
+
