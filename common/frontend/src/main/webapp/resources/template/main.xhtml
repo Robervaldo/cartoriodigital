@@ -34,7 +34,7 @@
 
 <body>
 	<f:view contentType="text/html">
-		<div id="wrapper">
+		<div id="wrapper" ng-controller="BaseController">
 
 			<div id="todo">
 				<div id="topo">
@@ -43,8 +43,7 @@
 					</ui:insert>
 				</div>
 				
-				<div id="conteudo" ng-controller="BaseController">
-					{{greeting}}
+				<div id="conteudo">
 					<ui:insert name="contents">
 					</ui:insert>
 				</div>
@@ -64,6 +63,7 @@
 		<a style="display: none;" href="#top" id="back-to-top"><i class="fa fa-chevron-up"></i></a>
 		
 		<h:outputScript library="js" name="custom.js" />
+		<h:outputScript library="js" name="router.js" />
 		<script>
 			angular.bootstrap(document, ['demo']);
 		</script>

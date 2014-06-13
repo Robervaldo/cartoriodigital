@@ -1,3 +1,16 @@
+.ui-pagina-home{
+	background-image: url("#{resource['images:cartorioDigital.svg']}");
+	background-repeat: no-repeat;
+	background-position: center;
+	padding-bottom: 20% !important;
+	min-height: 900px !important;
+	height: 20px;
+}
+
+#content-container{
+	margin-top:50px;
+}
+
 #header {
 	height: 140px;
 	background: #222222;

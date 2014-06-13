@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui:composition xmlns="http://www.w3.org/1999/xhtml"
-xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:h="http://java.sun.com/jsf/html">
 
@@ -21,11 +21,11 @@ xmlns:ui="http://java.sun.com/jsf/facelets"
 
 		<nav id="top-bar" class="collapse top-bar-collapse">
 			<h1>
-				<b>Notarial</b>
+				<b>{{nome_sistema}}</b>
 			</h1>
 			<ul class="nav navbar-nav pull-left">
 				<li class="" style="margin-top:15px;">
-					<b>Usuário:</b> Nome do Usuário
+					<b>Usuário:</b>{{nome_usuario}}
 				</li>
 			</ul>
 			<ul class="nav navbar-nav pull-right">
@@ -67,212 +67,6 @@ xmlns:ui="http://java.sun.com/jsf/facelets"
 				</ul>
 			</ul>
 		</nav>
-		<div id="sidebar-wrapper" class="collapse sidebar-collapse">
-				
-			<nav id="sidebar">
-				<ul id="main-nav" class="open-active">
-					<li class="active">				
-						<a href="#">
-							<i class="fa fa-dashboard"></i>
-							Principal
-						</a>				
-					</li>
-					<li class="dropdown">
-						<a href="javascript:;">
-							<i class="fa fa-file-text"></i>
-							Atos
-							<span class="caret"></span>
-						</a>				
-						<ul class="sub-nav">
-							<li>
-								<a href="Home/Atos">
-									<i class="fa fa-user"></i> 
-									Escritura
-								</a>
-							</li>
-							<li>
-								<a href="#">
-									<i class="fa fa-user"></i> 
-									Procuração / SUBST
-								</a>
-							</li>
-							<li>
-								<a href="#">
-									<i class="fa fa-user"></i> 
-									Testamento
-								</a>
-							</li>
-							<li>
-								<a href="#">
-									<i class="fa fa-user"></i> 
-									Atas
-								</a>
-							</li>
-							<li>
-								<a href="#">
-									<i class="fa fa-user"></i> 
-									Cartidão
-								</a>
-							</li>
-						</ul>
-					</li>
-					<li class="dropdown">
-						<a href="javascript:;">
-							<i class="fa fa-tasks"></i>
-							Cadastro
-							<span class="caret"></span>
-						</a>
-						<ul class="sub-nav">
-							<li>
-								<a href="#">
-									<i class="fa fa-location-arrow"></i>
-									Cliente
-								</a>
-							</li>
-							<li>
-								<a href="#">
-									<i class="fa fa-magic"></i>
-									Usuário do Sistema
-								</a>
-							</li>
-							<li>
-								<a href="#">
-									<i class="fa fa-check"></i>
-									Natureza / Minuta
-								</a>
-							</li>
-						</ul>
-					</li>
-					<li class="dropdown">
-						<a href="javascript:;">
-							<i class="fa fa-desktop"></i>
-							Relatório
-							<span class="caret"></span>
-						</a>	
-						<ul class="sub-nav">
-							<li>
-								<a href="#">
-									<i class="fa fa-hand-o-up"></i>
-									Ato Lavrado
-								</a>
-							</li>
-							<li>
-								<a href="#">
-									<i class="fa fa-reorder"></i>
-									Cliente
-								</a>
-							</li>
-							<li>
-								<a href="#">
-									<i class="fa fa-asterisk"></i>
-									Ato / DAJE
-								</a>
-							</li>
-							<li>
-								<a href="#">
-									<i class="fa fa-tasks"></i>
-									Ato / Selo
-								</a>
-							</li>
-							<li class="">
-								<a href="#">
-									<i class="fa fa-font"></i>
-									Livro
-								</a>
-							</li>
-						</ul>
-					</li>
-					<li class="dropdown">
-						<a href="javascript:;">
-							<i class="fa fa-table"></i>
-							Utilitário
-							<span class="caret"></span>
-						</a>
-						<ul class="sub-nav">
-							<li>
-								<a href="#">
-									<i class="fa fa-table"></i> 
-									DOI (SRF/MF)
-								</a>
-							</li>
-							<li>
-								<a href="#">
-									<i class="fa fa-table"></i> 
-									Exportação
-								</a>
-							</li>
-							<li>
-								<a href="#">
-									<i class="fa fa-table"></i> 
-									Importação
-								</a>
-							</li>
-							<li>
-								<a href="#">
-									<i class="fa fa-table"></i> 
-									Transmissão Arquivo
-								</a>
-							</li>
-							<li>
-								<a href="#">
-									<i class="fa fa-table"></i> 
-									Registros de Logs
-								</a>
-							</li>
-							<li>
-								<a href="#">
-									<i class="fa fa-table"></i> 
-									Controle de Selos
-								</a>
-							</li>
-						</ul>
-					</li>
-					<li class="dropdown">
-						<a href="javascript:;">
-							<i class="fa fa-bar-chart-o"></i>
-							Configuração
-							<span class="caret"></span>
-						</a>
-						<ul class="sub-nav">
-							<li>
-								<a href="#">
-									<i class="fa fa-bar-chart-o"></i> 
-									Configuração do Cartório
-								</a>
-							</li>
-							<li>
-								<a href="#">
-									<i class="fa fa-bar-chart-o"></i> 
-									Configuração de Impressão
-								</a>
-							</li>
-						</ul>
-					</li>
-					<li class="dropdown">
-						<a href="javascript:;">
-							<i class="fa fa-file-text-o"></i>
-							Ajuda
-							<span class="caret"></span>
-						</a>
-						<ul class="sub-nav">
-							<li>
-								<a href="#">
-									<i class="fa fa-unlock"></i> 
-									Ajuda do Sistema
-								</a>
-							</li>
-							<li>
-								<a href="#">
-									<i class="fa fa-unlock"></i> 
-									Sobre o Sistema
-								</a>
-							</li>
-						</ul>
-					</li>
-				</ul>
-			</nav>
-		</div>
-
+		<ui:include src="/resources/template/menu.xhtml" />
 	</h:body>
-
 </ui:composition>

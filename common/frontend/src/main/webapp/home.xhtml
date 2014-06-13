@@ -9,34 +9,8 @@
 	<body>
 		<ui:composition template="/resources/template/main.xhtml">
 			<ui:define name="contents">
-				<div id="content" >
-
-					<div id="content-header">
-						<h1>Principal</h1>
-					</div>
-						
-					<div id="content-container">
-						<div>
-							<span>{{geral.dataAtual}}</span>
-							<h:graphicImage value="#{resource['images:cartorioDigital.svg']}" height="300px" style="margin-top:100px; top:50%; left:35%; position:relative; z-index:-1;"   />
-						</div>
-						
-						<div class="container">
-					        <div class="row">
-					        <div class="col-md-3">
-					            <ul class="nav">
-					                <li><a href="#Cad"> Cadastro </a></li>
-					            </ul>
-					        </div>
-					        <br />
-					        <br />
-					        <div class="col-md-9">
-					             <ng-view></ng-view>
-					        </div>
-					        </div>
-					    </div>
-						
-					</div>
+				<div id="content">
+			    	<ng-view></ng-view>
 				</div>
 			</ui:define>
 		</ui:composition>
