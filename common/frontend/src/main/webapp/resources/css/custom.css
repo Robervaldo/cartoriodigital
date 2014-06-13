@@ -3,8 +3,8 @@
 	background-repeat: no-repeat;
 	background-position: center;
 	padding-bottom: 20% !important;
+	margin-top:-100px;
 	min-height: 900px !important;
-	height: 20px;
 }
 
 #content-container{

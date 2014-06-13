@@ -28,7 +28,7 @@
 	<h:outputScript library="js" name="angular-resource.min.js" />
 	
 	<script>
-			var app = angular.module('demo', ['ngRoute']);
+			var app = angular.module('app', ['ngRoute']);
 	</script>
 </h:head>
 
@@ -65,7 +65,7 @@
 		<h:outputScript library="js" name="custom.js" />
 		<h:outputScript library="js" name="router.js" />
 		<script>
-			angular.bootstrap(document, ['demo']);
+			angular.bootstrap(document, ['app']);
 		</script>
 	</f:view>
 </body>
