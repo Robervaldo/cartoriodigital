@@ -5,11 +5,14 @@
 app.config(['$routeProvider',
   function($routeProvider) {
     $routeProvider.
-      when('/CadastroCliente', {
-        templateUrl: 'resources/pages/cadastroCliente.html',
+    when('/', {
+        templateUrl: 'resources/pages/principal.html',
         controller: 'BaseController'
-    }).when('/', {
-        templateUrl: 'resources/pages/prime.html',
+    }).when('/SearchCadastroCliente', {
+        templateUrl: 'resources/pages/searchCadastroCliente.html',
+        controller: 'BaseController'
+    }).when('/CreateCadastroCliente', {
+        templateUrl: 'resources/pages/createCadastroCliente.html',
         controller: 'BaseController'
     });
 }]);
