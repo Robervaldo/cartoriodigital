@@ -10,22 +10,22 @@
 					Cadastro de Cliente
 				</div>
 				<div class="panel-body">
-					<div class="row">
+					<div class="row" ng-controller="ClienteController">
                     	<div class="col-lg-6">
-                       		<form role="form">
+                       		<form role="form" name="myForm" >
 	                            <div class="form-group">
 	                                <label>Nome</label>
-	                                <input class="form-control" placeholder="Nome">
+	                                <input class="form-control" required placeholder="Nome" ng-model="cliente.nome">
 	                            </div>
 	                             <div class="form-group">
 	                                <label>Data de Cadastro</label>
-	                                <input class="form-control" placeholder="Data de Cadastro">
+	                                <input class="form-control" type="date" required placeholder="Data de Cadastro" ng-model="cliente.data">
 	                            </div>
 	                            <div class="form-group">
 	                                <label>Status</label>
-	                                <input class="form-control" placeholder="Status">
+	                                <input class="form-control" required placeholder="Status" ng-model="cliente.status">
 	                            </div>
-								<button type="button" class="btn btn-primary">Salvar</button>
+								<input type="submit" class="btn btn-primary" value="Salvar" ng-click="salvar()" >
 	                        </form>
 	                   	</div>
 	            	</div>

@@ -8,7 +8,10 @@ app.controller('BaseController', function ($scope) {
 });
 
 
-app.controller('ClienteController', function ($scope, $http, ngTableParams) {
+app.controller('ClienteController', function ($scope, $http, ngTableParams, $window) {
+	
+	$scope.cliente = {nome:'', data:'', status:''};
+	
 	$http.get('rest/cliente').success(function(clientes){
     	var data = clientes;
 	    $scope.tableParams = new ngTableParams({
@@ -21,6 +24,14 @@ app.controller('ClienteController', function ($scope, $http, ngTableParams) {
 	        }
 	    });
     });
+	
+	$scope.salvar = function(){
+		$http.post('rest/cliente', $scope.cliente).success(function(data){
+			$window.console.log(data);
+			alert("Salvar");
+		});
+	};
+	
 });
 
 //app.controller('BaseCtrl', ['$scope', 'ClienteFactory', function ($scope, ClienteFactory) {

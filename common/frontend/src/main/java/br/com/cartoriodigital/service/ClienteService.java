@@ -8,6 +8,7 @@ import br.com.cartoriodigital.model.Cliente;
 
 
 public class ClienteService {
+	
 	public List<Cliente> listaCliente() {
 		List<Cliente> clienteList = new ArrayList<Cliente>();
 		clienteList.add(new Cliente(001L, "Fulano1", new Date(), "Ativo"));
@@ -23,4 +24,8 @@ public class ClienteService {
 		clienteList.add(new Cliente(013L, "Fulano13", new Date(), "Ativo"));
         return clienteList;
     }
+	
+	public void salvarCliente(){
+		System.out.println("Cliente inserido!");
+	}
 }
