@@ -7,6 +7,10 @@ public class Cliente {
 	private String nome;
     private Date dataCadastro;
     private String status;
+    
+    public Cliente(){
+    	
+    }
 	
     public Cliente(Long id, String nome, Date dataCadastro, String status){
     	this.id = id;

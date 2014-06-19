@@ -9,10 +9,14 @@ import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
+import org.codehaus.jackson.map.ObjectMapper;
+import org.codehaus.jackson.map.SerializationConfig;
+
 import br.com.cartoriodigital.model.Cliente;
 import br.com.cartoriodigital.service.ClienteService;
 
-@Path("/cliente")
+
+@Path("cliente")
 public class ClienteRest{
 	
 	@GET
@@ -25,8 +29,11 @@ public class ClienteRest{
 	@POST
     @Produces(MediaType.APPLICATION_JSON)
 	@Consumes(MediaType.APPLICATION_JSON)
-    public void postClienteJSON() {
+    public void saveClientesJSON(Cliente cliente) {
+		ObjectMapper mapper = new ObjectMapper();
+		mapper.configure(SerializationConfig.Feature.WRAP_ROOT_VALUE, true);
+//		mapper.configure(DeserializationConfig.Feature.UNWRAP_ROOT_VALUE, true);
 		ClienteService clienteService = new ClienteService();
-        clienteService.salvarCliente();
-    }	
+        clienteService.salvarCliente(cliente);
+    }
 }

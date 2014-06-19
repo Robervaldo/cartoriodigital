@@ -7,10 +7,15 @@ app.controller('BaseController', function ($scope) {
     $scope.nome_usuario = ' Nome do Usuário Logado';
 });
 
+//app.factory('ClienteFactory', function ($resource) {
+//    return $resource('/rest/cliente', {}, {
+//        post: {method:'POST'}
+//    });
+//});
 
-app.controller('ClienteController', function ($scope, $http, ngTableParams, $window) {
+
+app.controller('ClienteController', function ($scope, $http, ngTableParams) {
 	
-	$scope.cliente = {nome:'', data:'', status:''};
 	
 	$http.get('rest/cliente').success(function(clientes){
     	var data = clientes;
@@ -24,20 +29,16 @@ app.controller('ClienteController', function ($scope, $http, ngTableParams, $win
 	        }
 	    });
     });
+
+	$scope.cliente = {nome:'', dataCadastro:'', status:''};
 	
-	$scope.salvar = function(){
-		$http.post('rest/cliente', $scope.cliente).success(function(data){
-			$window.console.log(data);
-			alert("Salvar");
+	$scope.salvar = function(){	
+		$http.post('rest/cliente', $scope.cliente).success(function(clientes){
+			console.log(clientes);
 		});
 	};
 	
 });
 
-//app.controller('BaseCtrl', ['$scope', 'ClienteFactory', function ($scope, ClienteFactory) {
-//	ClienteFactory.get({}, function (clienteFactory) {
-//        $scope.clientes = clienteFactory;
-//    });
-//}]);
 
 
