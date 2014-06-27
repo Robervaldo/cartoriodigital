@@ -14,21 +14,100 @@
    </parent>
 
    <dependencies>
-     
-   </dependencies>
+	
+		<dependency>
+			<groupId>br.com.cartoriodigital.common</groupId>
+			<artifactId>common-model</artifactId>
+		</dependency>
+		
+		<dependency>
+			<groupId>br.com.cartoriodigital.common</groupId>
+			<artifactId>common-frontend</artifactId>
+		</dependency>
+		
+		<dependency>
+			<groupId>br.com.cartoriodigital.common</groupId>
+			<artifactId>common-backend</artifactId>
+		</dependency>	
+		
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>jcl-over-slf4j</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.jboss.seam.transaction</groupId>
+			<artifactId>seam-transaction</artifactId>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.jboss.seam.security</groupId>
+			<artifactId>seam-security</artifactId>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.jboss.seam.international</groupId>
+			<artifactId>seam-international</artifactId>
+		</dependency>
+		
+		<dependency>
+			<groupId>joda-time</groupId>
+			<artifactId>joda-time</artifactId>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.drools</groupId>
+			<artifactId>knowledge-api</artifactId>
+		</dependency>
+
+	</dependencies>
    
    <build>
-      <plugins>
-         <plugin>
-            <artifactId>maven-ear-plugin</artifactId>
-            <configuration>
-               <archive>
-                  <manifest>
-                     <addClasspath>true</addClasspath>
-                  </manifest>
-               </archive>
-            </configuration>
-         </plugin>
-      </plugins>
-   </build>
+		<plugins>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>1.6</source>
+					<target>1.6</target>
+					<encoding>${project.build.sourceEncoding}</encoding>
+				</configuration>
+			</plugin>
+
+			<plugin>
+				<artifactId>maven-resources-plugin</artifactId>
+				<configuration>
+					<encoding>${project.build.sourceEncoding}</encoding>
+				</configuration>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-ear-plugin</artifactId>
+				<configuration>
+					<version>${version.jboss.app}</version>
+					<defaultLibBundleDir>lib</defaultLibBundleDir>
+					<modules>
+						<webModule>
+							<groupId>br.com.cartoriodigital.common</groupId>
+							<artifactId>common-frontend</artifactId>
+							<contextRoot>common</contextRoot>
+							<unpack>war</unpack>
+							<bundleFileName>common.war</bundleFileName>
+						</webModule>
+						<ejbModule>
+							<groupId>br.com.cartoriodigital.common</groupId>
+							<artifactId>common-backend</artifactId>
+							<unpack>jar</unpack>
+							<bundleFileName>common.jar</bundleFileName>
+						</ejbModule>
+					</modules>
+				</configuration>
+			</plugin>
+
+		</plugins>
+
+	</build>
+   
 </project>
