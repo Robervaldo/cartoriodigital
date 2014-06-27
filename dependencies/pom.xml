@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
 	<modelVersion>4.0.0</modelVersion>
 
@@ -11,37 +12,405 @@
 	<name>Dependencies</name>
 
 	<properties>
-		<version.jboss.app>6</version.jboss.app>
+
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+		<!-- Common -->
+		<junit.version>4.6</junit.version>
+		<org.slf4j.version>1.5.5</org.slf4j.version>
+		<org.hibernate.version>4.2.0.Final</org.hibernate.version>
+		<org.zeroturnaround.version>1.1.3</org.zeroturnaround.version>
+		<org.eclipse.m2e.version>1.0.0</org.eclipse.m2e.version>
+
+		<!-- Web -->
+		<com.sun.faces.jsf.version>2.1.19</com.sun.faces.jsf.version>
+		<org.primefaces.version>4.0</org.primefaces.version>
+		<seam.faces.version>3.1.0.Final</seam.faces.version>
+		<com.ocpsoft.prettyfaces.version>3.3.2</com.ocpsoft.prettyfaces.version>
+		<net.sf.jasperreports.version>4.5.0</net.sf.jasperreports.version>
+
 	</properties>
 
-	<dependencies>
-		
-	</dependencies>
-
 	<dependencyManagement>
-		<dependencies>		
+		<dependencies>
+		
+			<dependency>
+				<groupId>br.com.cartoriodigital.common</groupId>
+				<artifactId>common-model</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			
+			<dependency>
+				<groupId>br.com.cartoriodigital.common</groupId>
+				<artifactId>common-frontend</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			
+			<dependency>
+				<groupId>br.com.cartoriodigital.common</groupId>
+				<artifactId>common-backend</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+
+			<!-- JUnit -->
+
+			<dependency>
+				<groupId>junit</groupId>
+				<artifactId>junit</artifactId>
+				<version>${junit.version}</version>
+				<scope>test</scope>
+			</dependency>
+
+			<!-- JSR 330 -->
+
+			<dependency>
+				<groupId>javax.inject</groupId>
+				<artifactId>inject-api</artifactId>
+				<version>1.0.0-PRD</version>
+				<scope>provided</scope>
+			</dependency>
+
+			<dependency>
+				<groupId>javax</groupId>
+				<artifactId>javaee-api</artifactId>
+				<version>6.0</version>
+				<scope>provided</scope>
+			</dependency>
+
+			<!-- Apache Components -->
+
+			<dependency>
+				<groupId>org.apache.commons</groupId>
+				<artifactId>commons-math</artifactId>
+				<version>2.2</version>
+			</dependency>
+
+			<dependency>
+				<groupId>commons-lang</groupId>
+				<artifactId>commons-lang</artifactId>
+				<version>2.6</version>
+			</dependency>
+
+			<dependency>
+				<groupId>commons-collections</groupId>
+				<artifactId>commons-collections</artifactId>
+				<version>3.2.1</version>
+			</dependency>
+
+			<dependency>
+				<groupId>commons-beanutils</groupId>
+				<artifactId>commons-beanutils</artifactId>
+				<version>1.8.3</version>
+			</dependency>
+
+			<dependency>
+				<groupId>commons-io</groupId>
+				<artifactId>commons-io</artifactId>
+				<version>2.0.1</version>
+			</dependency>
+
+			<!-- SLF4J -->
+
+			<dependency>
+				<artifactId>slf4j-api</artifactId>
+				<groupId>org.slf4j</groupId>
+				<version>${org.slf4j.version}</version>
+				<scope>provided</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.slf4j</groupId>
+				<artifactId>jcl-over-slf4j</artifactId>
+				<version>${org.slf4j.version}</version>
+				<exclusions>
+					<exclusion>
+						<artifactId>slf4j-api</artifactId>
+						<groupId>org.slf4j</groupId>
+					</exclusion>
+				</exclusions>
+			</dependency>
+
+			<!-- Hibernate -->
+
+			<dependency>
+				<groupId>org.hibernate</groupId>
+				<artifactId>hibernate-core</artifactId>
+				<version>${org.hibernate.version}</version>
+				<scope>provided</scope>
+			</dependency>
+
+			<!-- JBoss AS -->
+
+			<dependency>
+				<groupId>org.jboss.security</groupId>
+				<artifactId>jboss-security-spi</artifactId>
+				<version>3.0.0.Beta4</version>
+				<scope>provided</scope>
+			</dependency>
+
+			<dependency>
+				<groupId>jboss.jbossas.core-libs</groupId>
+				<artifactId>jbosssx</artifactId>
+				<version>4.0.4.GA</version>
+				<scope>provided</scope>
+			</dependency>
+
+			<dependency>
+				<groupId>org.jboss.weld.integration</groupId>
+				<artifactId>weld-jboss-int-webtier</artifactId>
+				<version>6.0.0.Beta11</version>
+				<scope>provided</scope>
+			</dependency>
+
+			<dependency>
+				<groupId>jboss</groupId>
+				<artifactId>jbosssx-client</artifactId>
+				<version>3.2.3</version>
+				<scope>provided</scope>
+			</dependency>
+
+			<!-- JavaServer Faces -->
+
+			<dependency>
+				<groupId>com.sun.faces</groupId>
+				<artifactId>jsf-api</artifactId>
+				<version>${com.sun.faces.jsf.version}</version>
+				<scope>provided</scope>
+			</dependency>
+
+			<dependency>
+				<groupId>com.sun.faces</groupId>
+				<artifactId>jsf-impl</artifactId>
+				<version>${com.sun.faces.jsf.version}</version>
+				<scope>provided</scope>
+			</dependency>
+
+			<dependency>
+				<groupId>org.primefaces</groupId>
+				<artifactId>primefaces</artifactId>
+				<version>${org.primefaces.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.primefaces.themes</groupId>
+				<artifactId>bootstrap</artifactId>
+				<version>1.0.10</version>
+			</dependency>
+
+			<dependency>
+				<groupId>com.ocpsoft</groupId>
+				<artifactId>prettyfaces-jsf2</artifactId>
+				<version>${com.ocpsoft.prettyfaces.version}</version>
+			</dependency>
+
+			<!-- JBoss Seam -->
+
+			<dependency>
+				<groupId>org.jboss.seam.faces</groupId>
+				<artifactId>seam-faces</artifactId>
+				<version>${seam.faces.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.jboss.seam.international</groupId>
+				<artifactId>seam-international</artifactId>
+				<version>${seam.faces.version}</version>
+				<scope>runtime</scope>
+			</dependency>
+
+			<dependency>
+				<groupId>org.jboss.seam.transaction</groupId>
+				<artifactId>seam-transaction</artifactId>
+				<version>${seam.faces.version}</version>
+				<scope>runtime</scope>
+			</dependency>
+
+			<dependency>
+				<groupId>org.jboss.seam.security</groupId>
+				<artifactId>seam-security</artifactId>
+				<version>${seam.faces.version}</version>
+				<scope>runtime</scope>
+			</dependency>
+
+			<!-- JasperReports -->
+
+			<dependency>
+				<groupId>net.sf.jasperreports</groupId>
+				<artifactId>jasperreports</artifactId>
+				<version>${net.sf.jasperreports.version}</version>
+				<exclusions>
+					<exclusion>
+						<artifactId>jfreechart</artifactId>
+						<groupId>jfree</groupId>
+					</exclusion>
+					<exclusion>
+						<artifactId>bcmail-jdk14</artifactId>
+						<groupId>bouncycastle</groupId>
+					</exclusion>
+					<exclusion>
+						<artifactId>bcprov-jdk14</artifactId>
+						<groupId>bouncycastle</groupId>
+					</exclusion>
+					<exclusion>
+						<artifactId>bctsp-jdk14</artifactId>
+						<groupId>org.bouncycastle</groupId>
+					</exclusion>
+					<exclusion>
+						<artifactId>jdtcore</artifactId>
+						<groupId>eclipse</groupId>
+					</exclusion>
+					<exclusion>
+						<artifactId>xml-apis</artifactId>
+						<groupId>xml-apis</groupId>
+					</exclusion>
+					<exclusion>
+						<artifactId>commons-logging</artifactId>
+						<groupId>commons-logging</groupId>
+					</exclusion>
+					<exclusion>
+						<groupId>org.apache.poi</groupId>
+						<artifactId>poi-ooxml</artifactId>
+					</exclusion>
+				</exclusions>
+
+			</dependency>
+
+			<!-- Misc -->
+
+			<dependency>
+				<groupId>com.googlecode.jatl</groupId>
+				<artifactId>jatl</artifactId>
+				<version>0.2.0</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.codehaus.groovy</groupId>
+				<artifactId>groovy-all</artifactId>
+				<version>1.7.4</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.drools</groupId>
+				<artifactId>knowledge-api</artifactId>
+				<version>6.0.1.Final</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.brazilutils.br</groupId>
+				<artifactId>brazilutils</artifactId>
+				<version>0.1.1</version>
+			</dependency>
+
+			<dependency>
+				<groupId>joda-time</groupId>
+				<artifactId>joda-time</artifactId>
+				<version>1.6.2</version>
+			</dependency>
 
 		</dependencies>
 	</dependencyManagement>
 
 	<build>
-		<plugins>
-			<plugin>
-				<artifactId>maven-compiler-plugin</artifactId>
-				<configuration>
-					<source>1.6</source>
-					<target>1.6</target>
-					<encoding>${project.build.sourceEncoding}</encoding>
-				</configuration>
-			</plugin>
-			<plugin>
-				<artifactId>maven-resources-plugin</artifactId>
-				<configuration>
-					<encoding>${project.build.sourceEncoding}</encoding>
-				</configuration>
-			</plugin>
-		</plugins>		
+		<pluginManagement>
+			<plugins>
+
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-resources-plugin</artifactId>
+					<version>2.4.3</version>
+				</plugin>
+
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-javadoc-plugin</artifactId>
+					<version>2.8</version>
+				</plugin>
+
+				<plugin>
+					<groupId>org.zeroturnaround</groupId>
+					<artifactId>jrebel-maven-plugin</artifactId>
+					<version>${org.zeroturnaround.version}</version>
+				</plugin>
+
+
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-ear-plugin</artifactId>
+					<version>2.5</version>
+				</plugin>
+
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-compiler-plugin</artifactId>
+					<version>2.3.2</version>
+					<configuration>
+						<source>1.6</source>
+						<target>1.6</target>
+					</configuration>
+				</plugin>
+
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-ejb-plugin</artifactId>
+					<version>2.3</version>
+					<configuration>
+						<ejbVersion>3.1</ejbVersion>
+					</configuration>
+				</plugin>
+
+				<plugin>
+					<groupId>org.codehaus.mojo</groupId>
+					<artifactId>build-helper-maven-plugin</artifactId>
+					<version>1.7</version>
+					<executions>
+						<execution>
+							<id>add-source</id>
+							<phase>generate-sources</phase>
+							<goals>
+								<goal>add-source</goal>
+							</goals>
+							<configuration>
+								<sources>
+									<source>${basedir}/src/main/jasperreports</source>
+								</sources>
+							</configuration>
+						</execution>
+					</executions>
+				</plugin>
+
+				<plugin>
+					<artifactId>jasperreports-maven-plugin</artifactId>
+					<groupId>org.codehaus.mojo</groupId>
+					<version>1.0-beta-2</version>
+					<executions>
+						<execution>
+							<goals>
+								<goal>compile-reports</goal>
+							</goals>
+						</execution>
+					</executions>
+
+					<configuration>
+						<outputDirectory>${project.build.directory}/classes/reports</outputDirectory>
+						<compiler>net.sf.jasperreports.compilers.JRGroovyCompiler</compiler>
+					</configuration>
+
+					<dependencies>
+						<dependency>
+							<groupId>net.sf.jasperreports</groupId>
+							<artifactId>jasperreports</artifactId>
+							<version>${net.sf.jasperreports.version}</version>
+						</dependency>
+						<dependency>
+							<groupId>org.codehaus.groovy</groupId>
+							<artifactId>groovy-all</artifactId>
+							<version>1.7.4</version>
+						</dependency>
+					</dependencies>
+				</plugin>
+
+			</plugins>
+
+		</pluginManagement>
 	</build>
 
 </project>
