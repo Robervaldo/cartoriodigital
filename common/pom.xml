@@ -1,50 +1,65 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-   <modelVersion>4.0.0</modelVersion>
-   <groupId>br.com.cartoriodigital.common</groupId>
-   <artifactId>common-parent</artifactId>
-   <packaging>pom</packaging>
-   <name>Common Parent</name>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>br.com.cartoriodigital.common</groupId>
+	<artifactId>common-parent</artifactId>
+	<packaging>pom</packaging>
+	<name>Common Parent</name>
 
-   <parent>
-      <artifactId>dependencies</artifactId>
-      <groupId>br.com.cartoriodigital</groupId>
-      <version>1.0.0</version>
-      <relativePath>../dependencies/pom.xml</relativePath>
-   </parent>
+	<parent>
+		<artifactId>dependencies</artifactId>
+		<groupId>br.com.cartoriodigital</groupId>
+		<version>1.0.0</version>
+		<relativePath>../dependencies/pom.xml</relativePath>
+	</parent>
 
-   <modules>
-      <module>backend</module>
-      <module>frontend</module>
-      <module>model</module>
-   </modules>
+	<modules>
+		<module>backend</module>
+		<module>frontend</module>
+		<module>model</module>
+	</modules>
 
-   <build>
-      <pluginManagement>
-         <plugins>
-            <plugin>
-               <groupId>org.apache.maven.plugins</groupId>
-               <artifactId>maven-site-plugin</artifactId>
-               <configuration>
-                  <unzipCommand>/usr/bin/unzip -o > err.txt</unzipCommand>
-               </configuration>
-            </plugin>
-         </plugins>
-      </pluginManagement>
-   </build>
+	<dependencies>
 
-   <dependencyManagement>
-      <dependencies>
-         
-      </dependencies>
-   </dependencyManagement>
+		<dependency>
+			<groupId>jboss</groupId>
+			<artifactId>jbosssx-client</artifactId>
+		</dependency>
 
-   <distributionManagement>
-      <site>
-         <id>site</id>
-         <name>project website</name>
-         <url>scp://local.company.com/websites/project.company.com/</url>
-      </site>
-   </distributionManagement>
-   
+		<dependency>
+			<groupId>javax</groupId>
+			<artifactId>javaee-api</artifactId>
+		</dependency>
+
+		<dependency>
+			<artifactId>slf4j-api</artifactId>
+			<groupId>org.slf4j</groupId>
+		</dependency>
+
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>1.6</source>
+					<target>1.6</target>
+					<encoding>${project.build.sourceEncoding}</encoding>
+				</configuration>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-resources-plugin</artifactId>
+				<configuration>
+					<encoding>${project.build.sourceEncoding}</encoding>
+				</configuration>
+			</plugin>
+
+		</plugins>
+	</build>
+
 </project>
