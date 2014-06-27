@@ -17,25 +17,38 @@ app.controller('BaseController', function ($scope) {
 app.controller('ClienteController', function ($scope, $http, ngTableParams) {
 	
 	
-	$http.get('rest/cliente').success(function(clientes){
-    	var data = clientes;
-	    $scope.tableParams = new ngTableParams({
-	        page: 1,
-	        count: 5
-	    }, {
-	        total: data.length,
-	        getData: function($defer, params) {
-	            $defer.resolve(data.slice((params.page() - 1) * params.count(), params.page() * params.count()));
-	        }
+	$http.get('rest/cliente')
+		.success(function(clientes){
+			var data = clientes;
+		    $scope.tableParams = new ngTableParams({
+		        page: 1,
+		        count: 5
+		    }, {
+		        total: data.length,
+		        getData: function($defer, params) {
+		            $defer.resolve(data.slice((params.page() - 1) * params.count(), params.page() * params.count()));
+		        }
+		    });
 	    });
-    });
 
 	$scope.cliente = {nome:'', dataCadastro:'', status:''};
 	
 	$scope.salvar = function(){	
-		$http.post('rest/cliente', $scope.cliente).success(function(clientes){
-			console.log(clientes);
-		});
+		$http.post('rest/cliente', $scope.cliente)
+			.success(function(clientes){
+				console.log(clientes);
+			}).error(function(clientes){
+				
+			});
+	};
+	
+	$scope.atualizar = function(){	
+		$http.put('rest/cliente', $scope.cliente)
+			.success(function(clientes){
+				console.log(clientes);
+			}).error(function(clientes){
+				
+			});
 	};
 	
 });

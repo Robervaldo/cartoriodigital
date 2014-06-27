@@ -1,18 +1,38 @@
 package br.com.cartoriodigital.model;
 
-import java.util.Date;
+import java.io.Serializable;
 
-public class Cliente {
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "cliente")
+public class Cliente implements Serializable{
+
+	private static final long serialVersionUID = 1L;
+
+	@Id
+	@GeneratedValue
+	@Column(name="clie_id")
 	private Long id;
+	
+	@Column(name="clie_nome")
 	private String nome;
-    private Date dataCadastro;
+	
+	@Column(name="clie_data")
+    private String dataCadastro;
+	
+	@Column(name="clie_status")
     private String status;
     
     public Cliente(){
     	
     }
 	
-    public Cliente(Long id, String nome, Date dataCadastro, String status){
+    public Cliente(Long id, String nome, String dataCadastro, String status){
     	this.id = id;
     	this.nome = nome;
     	this.dataCadastro = dataCadastro;
@@ -31,10 +51,10 @@ public class Cliente {
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-	public Date getDataCadastro() {
+	public String getDataCadastro() {
 		return dataCadastro;
 	}
-	public void setDataCadastro(Date dataCadastro) {
+	public void setDataCadastro(String dataCadastro) {
 		this.dataCadastro = dataCadastro;
 	}
 	public String getStatus() {

@@ -9,9 +9,6 @@ import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
-import org.codehaus.jackson.map.ObjectMapper;
-import org.codehaus.jackson.map.SerializationConfig;
-
 import br.com.cartoriodigital.model.Cliente;
 import br.com.cartoriodigital.service.ClienteService;
 
@@ -30,10 +27,13 @@ public class ClienteRest{
     @Produces(MediaType.APPLICATION_JSON)
 	@Consumes(MediaType.APPLICATION_JSON)
     public void saveClientesJSON(Cliente cliente) {
-		ObjectMapper mapper = new ObjectMapper();
-		mapper.configure(SerializationConfig.Feature.WRAP_ROOT_VALUE, true);
-//		mapper.configure(DeserializationConfig.Feature.UNWRAP_ROOT_VALUE, true);
-		ClienteService clienteService = new ClienteService();
-        clienteService.salvarCliente(cliente);
+		if(cliente != null){
+			if(cliente.getNome() != null && cliente.getDataCadastro() != null && cliente.getStatus() !=null){
+				ClienteService clienteService = new ClienteService();
+				clienteService.salvarCliente(cliente);				
+			}else{
+				System.out.println("Informe todos os campos.");
+			}
+		}
     }
 }

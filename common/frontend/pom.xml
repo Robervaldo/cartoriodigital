@@ -15,31 +15,48 @@
 		<relativePath>../pom.xml</relativePath>
 	</parent>
 
+	<properties>
+	</properties>
+
 	<dependencies>
 
-		<!-- <dependency> <groupId>javax.ws.rs</groupId> <artifactId>jsr311-api</artifactId> 
-			<version>1.1.1</version> </dependency> -->
+		<dependency>
+			<groupId>br.com.cartoriodigital.common</groupId>
+			<artifactId>common-backend</artifactId>
+		</dependency>
+		
+		<dependency>
+			<groupId>br.com.cartoriodigital.common</groupId>
+			<artifactId>common-model</artifactId>
+		</dependency>
 
 		<dependency>
-			<groupId>com.sun.jersey</groupId>
-			<artifactId>jersey-server</artifactId>
-			<version>1.17.1</version>
+			<groupId>org.jboss.seam.faces</groupId>
+			<artifactId>seam-faces</artifactId>
+			<exclusions>
+				<exclusion>
+					<groupId>org.jboss.solder</groupId>
+					<artifactId>solder-api</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>org.jboss.solder</groupId>
+					<artifactId>solder-impl</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>org.jboss.seam.international</groupId>
+					<artifactId>seam-international-api</artifactId>
+				</exclusion>
+			</exclusions>
 		</dependency>
+
 		<dependency>
-			<groupId>com.sun.jersey</groupId>
-			<artifactId>jersey-servlet</artifactId>
-			<version>1.17.1</version>
-		</dependency>
-		<dependency>
-			<groupId>com.sun.jersey</groupId>
-			<artifactId>jersey-json</artifactId>
-			<version>1.17.1</version>
+			<groupId>com.ocpsoft</groupId>
+			<artifactId>prettyfaces-jsf2</artifactId>
 		</dependency>
 
 	</dependencies>
 
 	<build>
-
 		<finalName>${project.artifactId}</finalName>
 
 		<plugins>
