@@ -20,6 +20,12 @@
 	</properties>
 
 	<dependencies>
+	
+		<dependency>
+			<groupId>br.com.cartoriodigital.common</groupId>
+			<artifactId>common-model</artifactId>
+		</dependency>
+		
 		<dependency>
 			<groupId>org.codehaus.groovy</groupId>
 			<artifactId>groovy-all</artifactId>
@@ -29,6 +35,19 @@
 			<groupId>net.sf.jasperreports</groupId>
 			<artifactId>jasperreports</artifactId>
 		</dependency>
+		
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.jboss.solder</groupId>
+			<artifactId>solder-logging</artifactId>
+			<version>3.2.1.Final</version>
+		</dependency>
+		
+		
 	</dependencies>
 
 	<build>

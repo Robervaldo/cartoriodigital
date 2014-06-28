@@ -12,7 +12,7 @@
       <version>1.0.0</version>
       <relativePath>../dependencies/pom.xml</relativePath>
    </parent>
-
+   
    <dependencies>
 	
 		<dependency>
@@ -28,7 +28,7 @@
 		<dependency>
 			<groupId>br.com.cartoriodigital.common</groupId>
 			<artifactId>common-backend</artifactId>
-		</dependency>	
+		</dependency>
 		
 		<dependency>
 			<groupId>org.slf4j</groupId>
